@@ -5,6 +5,8 @@
 package com.fayuan.thinkinginspring;
 
 /**
+ * bean实例
+ *
  * @author mr.24
  * @version Id: MyBean, v 1.0 2019-06-03 15:43 Exp $$
  */

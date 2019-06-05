@@ -10,6 +10,8 @@ import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
 /**
+ * 通过xml向bean工厂添加java bean
+ *
  * @author mr.24
  * @version Id: BeanFactoryTest, v 1.0 2019-06-03 15:49 Exp $$
  */
