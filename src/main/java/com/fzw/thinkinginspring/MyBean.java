@@ -2,7 +2,7 @@
  * @Company Mister24.com Inc.
  * @Copyright Copyright (c) 2016-2019 All Rights Reserved.
  */
-package com.fayuan.thinkinginspring;
+package com.fzw.thinkinginspring;
 
 /**
  * bean实例

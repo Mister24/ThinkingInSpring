@@ -1,4 +1,4 @@
-package com.fayuan.thinkinginspring;
+package com.fzw.thinkinginspring;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
