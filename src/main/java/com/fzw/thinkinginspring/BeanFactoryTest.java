@@ -23,6 +23,7 @@ public class BeanFactoryTest {
         BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beanFactory.xml"));
         MyBean myBean = (MyBean)beanFactory.getBean("myTestBean");
 
+
         System.out.println(myBean.getStr());
     }
 }
