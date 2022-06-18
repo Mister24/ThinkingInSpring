@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userDao" class="com.fzw.demo1.UserDaoImpl">
+    </bean>
+
+    <!--  设置注入  -->
+    <bean id="userDao1" class="com.fzw.demo1.UserDaoImpl" >
+        <property name="name" value="name"/>
+    </bean>
+
+    <!--  构造注入  -->
+    <bean id="userDao2" class="com.fzw.demo1.UserDaoImpl">
+        <constructor-arg value="12"/>
+    </bean>
+
+    <!--  测试init-method及destroy-method  -->
+    <bean id="userDao3" class="com.fzw.demo1.UserDaoImpl" init-method="setup" destroy-method="destroy">
+        <property name="name" value="userDao3"/>
+    </bean>
+
+    <!--  测试init-method及destroy-method  -->
+    <bean id="userDao3" class="com.fzw.demo1.UserDaoImpl" init-method="setup" destroy-method="destroy" scope="prototype">
+        <property name="name" value="userDao3"/>
+    </bean>
+
+</beans>
