@@ -4,27 +4,44 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userDao" class="com.fzw.demo1.UserDaoImpl">
+    <bean id="userDao" class="com.fzw.springabc.no001_bean注入.UserDaoImpl">
     </bean>
 
     <!--  设置注入  -->
-    <bean id="userDao1" class="com.fzw.demo1.UserDaoImpl" >
+    <bean id="userDao1" class="com.fzw.springabc.no001_bean注入.UserDaoImpl" >
         <property name="name" value="name"/>
     </bean>
 
     <!--  构造注入  -->
-    <bean id="userDao2" class="com.fzw.demo1.UserDaoImpl">
+    <bean id="userDao2" class="com.fzw.springabc.no001_bean注入.UserDaoImpl">
         <constructor-arg value="12"/>
     </bean>
 
     <!--  测试init-method及destroy-method  -->
-    <bean id="userDao3" class="com.fzw.demo1.UserDaoImpl" init-method="setup" destroy-method="destroy">
+    <bean id="userDao3" class="com.fzw.springabc.no001_bean注入.UserDaoImpl" init-method="setup" destroy-method="destroy">
         <property name="name" value="userDao3"/>
     </bean>
 
     <!--  测试init-method及destroy-method  -->
-    <bean id="userDao3" class="com.fzw.demo1.UserDaoImpl" init-method="setup" destroy-method="destroy" scope="prototype">
-        <property name="name" value="userDao3"/>
+    <bean id="userDao4" class="com.fzw.springabc.no001_bean注入.UserDaoImpl"
+        init-method="setup"
+        destroy-method="destroy"
+        scope="prototype">
+        <property name="name" value="userDao4"/>
     </bean>
-
+    
+    <!-- Spring的bean的生命周期的配置 -->
+    <!-- 单例scope的情况下，factory关闭，destroy-method中的方法会执行 -->
+    <!-- scope=prototype的情况下，factory关闭，destroy-method中的方法不会执行 -->
+    <bean id="customerDaoSingleton" class="com.fzw.springabc.no002_bean作用范围.CustomerDaoImpl"
+        init-method="setup"
+        destroy-method="destroy">
+    </bean>
+    
+    <bean id="customerDaoPrototype" class="com.fzw.springabc.no002_bean作用范围.CustomerDaoImpl"
+        init-method="setup"
+        destroy-method="destroy"
+        scope="prototype"
+    >
+    </bean>
 </beans>

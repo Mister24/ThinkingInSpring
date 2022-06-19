@@ -1,5 +1,6 @@
-package com.fzw.demo1;
+package com.fzw.no001_bean注入;
 
+import com.fzw.springabc.no001_bean注入.UserDaoImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

@@ -1,4 +1,4 @@
-package com.fzw.demo1;
+package com.fzw.springabc.no001_bean注入;
 
 public interface UserDao {
 
