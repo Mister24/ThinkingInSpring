@@ -3,5 +3,48 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="collectionBean" class="com.fzw.springabc.no002_bean作用范围.CollectionBean">
+        <!-- 注入数组类型（和注入List类型是一样的） -->
+        <property name="array">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        
+        <!-- 注入List集合 -->
+        <property name="list">
+            <list>
+                <value>4</value>
+                <value>5</value>
+                <value>6</value>
+            </list>
+        </property>
     
+        <!-- 注入Set集合 -->
+        <property name="set">
+            <set>
+                <value>7</value>
+                <value>8</value>
+            </set>
+        </property>
+    
+        <!-- 注入Map集合 -->
+        <property name="map">
+            <map>
+                <entry key="key1" value="value1"/>
+                <entry key="key2" value="value2"/>
+                <entry key="key3" value="value3"/>
+            </map>
+        </property>
+    
+        <!-- 注入Properties类型的属性 -->
+        <property name="properties">
+            <props>
+                <prop key="p1">v1</prop>
+                <prop key="p2">v2</prop>
+            </props>
+        </property>
+    </bean>
 </beans>

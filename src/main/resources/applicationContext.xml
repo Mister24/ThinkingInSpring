@@ -5,6 +5,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
+    <import resource="applicationContext02.xml"/>
+    
     <bean id="userDao" class="com.fzw.springabc.no001_bean注入.UserDaoImpl">
     </bean>
 
@@ -48,7 +50,7 @@
     
     
     <bean id="car" class="com.fzw.springabc.no002_bean作用范围.Car">
-        <constructor-arg name="name" value="tesla"/>
+        <constructor-arg name="name" value="Tesla"/>
         <constructor-arg name="price" value="300000"/>
     </bean>
     
@@ -57,16 +59,31 @@
         <property name="car" ref="car"/>
     </bean>
     
+    <!--  P命名空间  -->
     <bean
         id="car1"
         class="com.fzw.springabc.no002_bean作用范围.Car"
-        p:name="tesla1"
-        p:price="20001">
+        p:name="Benz"
+        p:price="30001">
     </bean>
     
     <bean id="employee1" class="com.fzw.springabc.no002_bean作用范围.Employee"
-        p:name="kobe1"
+        p:name="Durant"
         p:car-ref="car1">
-<!--        p:car1-ref="car1">-->
     </bean>
+    
+    <!--  SpEL  -->
+    
+    <bean id="car2" class="com.fzw.springabc.no002_bean作用范围.Car">
+        <constructor-arg name="name" value="#{'BMW'}"/>
+        <constructor-arg name="price" value="#{400000}"/>
+    </bean>
+    
+    <bean id="employee2" class="com.fzw.springabc.no002_bean作用范围.Employee">
+        <property name="name" value="#{'James'}"/>
+        <property name="car" value="#{car2}"/>
+    </bean>
+    
+    
+    
 </beans>
