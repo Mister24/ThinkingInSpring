@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:p="http://www.springframework.org/schema/p"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="userDao" class="com.fzw.springabc.no001_bean注入.UserDaoImpl">
     </bean>
@@ -43,5 +44,29 @@
         destroy-method="destroy"
         scope="prototype"
     >
+    </bean>
+    
+    
+    <bean id="car" class="com.fzw.springabc.no002_bean作用范围.Car">
+        <constructor-arg name="name" value="tesla"/>
+        <constructor-arg name="price" value="300000"/>
+    </bean>
+    
+    <bean id="employee" class="com.fzw.springabc.no002_bean作用范围.Employee">
+        <property name="name" value="kobe"/>
+        <property name="car" ref="car"/>
+    </bean>
+    
+    <bean
+        id="car1"
+        class="com.fzw.springabc.no002_bean作用范围.Car"
+        p:name="tesla1"
+        p:price="20001">
+    </bean>
+    
+    <bean id="employee1" class="com.fzw.springabc.no002_bean作用范围.Employee"
+        p:name="kobe1"
+        p:car-ref="car1">
+<!--        p:car1-ref="car1">-->
     </bean>
 </beans>
