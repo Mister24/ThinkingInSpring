@@ -15,22 +15,22 @@
     
     <bean id="userDao" class="com.fzw.springabc.no001_bean注入.UserDaoImpl">
     </bean>
-
+    
     <!--  设置注入  -->
-    <bean id="userDao1" class="com.fzw.springabc.no001_bean注入.UserDaoImpl" >
+    <bean id="userDao1" class="com.fzw.springabc.no001_bean注入.UserDaoImpl">
         <property name="name" value="name"/>
     </bean>
-
+    
     <!--  构造注入  -->
     <bean id="userDao2" class="com.fzw.springabc.no001_bean注入.UserDaoImpl">
         <constructor-arg value="12"/>
     </bean>
-
+    
     <!--  测试init-method及destroy-method  -->
     <bean id="userDao3" class="com.fzw.springabc.no001_bean注入.UserDaoImpl" init-method="setup" destroy-method="destroy">
         <property name="name" value="userDao3"/>
     </bean>
-
+    
     <!--  测试init-method及destroy-method  -->
     <bean id="userDao4" class="com.fzw.springabc.no001_bean注入.UserDaoImpl"
         init-method="setup"
@@ -91,5 +91,8 @@
     </bean>
     
     
-    
+    <bean id="productService" class="com.fzw.springabc.no002_bean作用范围.ProductService"></bean>
+    <bean id="productDao" class="com.fzw.springabc.no002_bean作用范围.ProductDao"></bean>
+    <bean id="orderDao" class="com.fzw.springabc.no002_bean作用范围.OrderDao"></bean>
+
 </beans>
